@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather forecast</title>
+  </head>
+  <body>
+    <div class="wrapper">
+        <div class="search">
+            <form action="search-form" method="get" id="search-form">
+                <div class="row justify-content-center">
+                    <div class="col-auto input-search">
+                        <input
+                        type="search"
+                        placeholder="Enter a city"
+                        id="city-input"
+                        size="40"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        autocapitalize="off"
+                        autofocus="on"/>
+                    </div>
+                    <div class="col-auto">
+                        <input 
+                        type="submit"
+                        value="🔎"/>
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" id="location">📍</button>
+                    </div>
+                </div>  
+            </form>
+            <div class="container currentLocation">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <h1 id="city">Kyiv</h1>
+                        <h2 id="Date">Saturday, 14:32</h2>
+                    </div>
+                    <div class="col">
+                        <h2 class="weather-condition">Light Rain</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+            <div class="row justify-content-between">
+                <div class="col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-auto">
+                                <img 
+                                src="img/drizzle.png"
+                                alt="drizzle"
+                                width="100px"/>
+                            </div>
+                            <div class="col currentWeatherContainer">
+                                <div class="currentWeather">
+                                    <p>
+                                        <span id="temperature">10°C</span> 
+                                        <!-- <span>
+                                            <a href="" id="Cel">C</a>
+                                            |
+                                            <a href="" id="Fahr">F</a>
+                                        </span> -->
+                                    </p>
+                                    <p>Day 10° | Night -1°</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <ul class="conditionAtmosphere">
+                        <li id="weather-condition">Precipitation: 1%</li>
+                        <li id="degree">Humidity: 53%</li>
+                        <li id="wind">Wind: 18 km/h</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto"><div class="forecast">
+                    <div aria-label="Sunday">Sun</div>
+                    <div>
+                        <g-img>
+                            <img src="img/snow.png" alt="snow" width="60px" />
+                        </g-img>
+                    </div>
+                    <div>
+                        <div class="c-degree">3°</div>
+                        <div class="c-Degree">-2°</div>
+                    </div>
+                </div></div>
+                <div class="col-auto"><div class="forecast">
+                    <div aria-label="Monday">Mon</div>
+                    <div>
+                        <g-img>
+                            <img src="img/cloudy.png" alt="cloudy" width="60px" />
+                        </g-img>
+                    </div>
+                    <div>
+                        <div class="c-degree">8°</div>
+                        <div class="c-Degree">2°</div>
+                    </div>
+                </div></div>
+                <div class="col-auto"><div class="forecast">
+                    <div aria-label="Tuesday">Tue</div>
+                    <div>
+                        <g-img>
+                            <img src="img/clouds.png" alt="clouds" width="60px" />
+                        </g-img>
+                    </div>
+                    <div>
+                        <div class="c-degree">12°</div>
+                        <div class="c-Degree">2°</div>
+                    </div>
+                </div></div>
+                <div class="col-auto"><div class="forecast">
+                    <div aria-label="Wednesday">Wed</div>
+                    <div>
+                        <g-img>
+                            <img src="img/cloudy.png" alt="cloudy" width="60px" />
+                        </g-img>
+                    </div>
+                    <div>
+                        <div class="c-degree">11°</div>
+                        <div class="c-Degree">5°</div>
+                    </div>
+                </div></div>
+                <div class="col-auto"><div class="forecast">
+                    <div aria-label="Thursday">Thu</div>
+                    <div>
+                        <g-img>
+                            <img src="img/rain.png" alt="rain" width="60px" />
+                        </g-img>
+                    </div>
+                    <div>
+                        <div class="c-degree">7°</div>
+                        <div class="c-Degree">1°</div>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
+
