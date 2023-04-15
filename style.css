@@ -78,17 +78,22 @@ button {
 }
 
 .forecast {
-    font-family: "Crimson Text", serif;
-    text-align: center;
-    font-weight: bolder;
-    padding-bottom: 20px;
+  font-family: "Crimson Text", serif;
+  text-align: center;
+  font-weight: bolder;
+  padding-bottom: 20px;  
 }
 
 .c-degree,
 .c-Degree {
-    display: inline-block;
+  display: inline-block;
 }
 
 .c-Degree {
-    color: gray;
+  color: gray;
+}
+
+.aboutOwner {
+  font-family: "Crimson Text", serif;
+  text-align: center;
 }
