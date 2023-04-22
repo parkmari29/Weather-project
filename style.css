@@ -114,11 +114,15 @@ body {
   margin: 20px auto;
 }
 
-.Weather-search .source {
+.Weather-search footer {
   font-size: 18px;
   margin-top: 40px;
   line-height: 18px;
   text-align: center;
-  color: #575A5F;
+  color: #41326414;
+}
+
+.Weather-search .source {
+  color: #5252ff;
   text-decoration: none;
 }
