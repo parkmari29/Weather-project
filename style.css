@@ -1,100 +1,123 @@
 body {
-  font-family: "Crimson Text", serif;
-}
-
-.search {
   background: #f8f8ff;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  margin: 20px auto;
-  max-width: 800px;
-  padding: 20px;
 }
-
-.input-search {
-  font-family: "Crimson Text", serif;
-}
-
-input,
-button {
-  align-items: center;
+.Weather-search {
   background: white;
-  border: 2px solid black;
-  line-height: 23px;
-  margin: 0px auto;
-  padding: 10px 20px;
-  text-align: center;
-}
-
-.currentLocation, .container + .container {
-  margin-top: 30px;
-}
-
-#city, 
-#Date,
-.weather-condition,
-.conditionAtmosphere {
+  border-radius: 16px;
+  box-shadow: 0px 30px 50px #41326414;
   font-family: "Crimson Text", serif;
+  margin: 50px auto;
+  padding: 40px;
+}
+
+.Weather-search form {
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+.Weather-search .search-input {
+  background: #f8f8ff;
+  border: 1px solid #41326414;
+  padding: 15px 20px;
+  display: inline-block;
+  border-radius: 6px;
+  color: #27214266;
+  font-size: 16px;
+  height: 50px;
+  line-height: 20px;
+}
+
+.Weather-search .btn {
+  background: #f8f8ff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: 1px solid #41326414;
+  height: 50px;
+}
+
+.Weather-search h1, h2 {
+  margin: 20px 10px; 
+}
+
+.Weather-search h1 {
+  font-size: 38px;
 }
 
 #city {
-  font-size: 32px;
-}
-
-.weather-condition {
-  font-size: 26px;
-  text-align: right;
   font-weight: bold;
 }
 
-.currentWeather {
-  font-family: "Crimson Text", serif;
-  font-size: 18px;
+.Weather-search h2::first-letter {
+  font-size: 30px;
+  text-transform: capitalize;
 }
 
-.currentWeather p + p {
-  margin-bottom: 0;
+.Weather-search canvas {
+  margin: 10px 0;
 }
 
-#Cel, #Fahr {
-  color: black;
-  text-decoration-line: none;
+.Weather-search .temperature {
+  font-size: 60px;
+  margin-left: 15px;
 }
 
-#degree {
-  font-weight: bold;
-  font-size: 32px;
+.Weather-search #unit-Celc, #unit-Fahr {
+  font-size: 20px;
+  font-weight: normal;
+  position: relative;
+  border: none;
+  background: transparent;
 }
 
-.conditionAtmosphere {
-  font-size: 26px;
-  text-align: right;
+.Weather-search ul {
+  margin: 0;
+  padding: 0;
+}
+
+.Weather-search li {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #5252ff;
+  font-size: 20px;
+  line-height: 20px;
   list-style: none;
 }
 
-.currentWeatherContainer {
-  display: flex;
-  align-items: center;
-}
-
-.forecast {
-  font-family: "Crimson Text", serif;
+.WeatherForecast {
   text-align: center;
-  font-weight: bolder;
-  padding-bottom: 20px;  
+  margin: 40px 0;
+  border-bottom: 1px solid #f8f8ff;
+  padding-bottom: 50px;
 }
 
-.c-degree,
-.c-Degree {
-  display: inline-block;
-}
-
-.c-Degree {
-  color: gray;
-}
-
-.aboutOwner {
-  font-family: "Crimson Text", serif;
+.WeatherForecast .week-days {
+  font-size: 20px;
+  line-height: 20px;
   text-align: center;
-  font-size: 24px;
+}
+
+.WeatherForecast .forecast-temp {
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.WeatherForecast .temp-night {
+  color: #5252ff;
+  margin-left: 10px;
+  opacity: 0.6;
+}
+
+.Weather .WeatherForecast canvas {
+  display: block;
+  margin: 20px auto;
+}
+
+.Weather-search footer {
+  font-size: 18px;
+  margin-top: 40px;
+  line-height: 18px;
+  text-align: center;
+  color: #575A5F;
 }

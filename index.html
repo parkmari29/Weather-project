@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,148 +17,146 @@
       crossorigin="anonymous"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css" />
     <title>Weather forecast</title>
   </head>
-  <body>
-    <div class="wrapper">
-        <div class="search">
-            <form action="search-form" method="get" id="search-form">
-                <div class="row justify-content-center">
-                    <div class="col-auto input-search">
-                        <input
-                        type="search"
-                        placeholder="Enter a city"
-                        id="city-input"
-                        size="40"
-                        aria-autocomplete="list"
-                        autocomplete="off"
-                        autocapitalize="off"
-                        autofocus="on"/>
-                    </div>
-                    <div class="col-auto">
-                        <input 
-                        type="submit"
-                        value="🔎"/>
-                    </div>
-                    <div class="col-auto">
-                        <button type="button" id="location">📍</button>
-                    </div>
-                </div>  
-            </form>
-            <div class="container currentLocation">
-                <div class="row justify-content-between">
-                    <div class="col">
-                        <h1 id="city">Kyiv</h1>
-                        <h2 id="Date">Saturday, 14:32</h2>
-                    </div>
-                    <div class="col">
-                        <h2 class="weather-condition">Light Rain</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-            <div class="row justify-content-between">
-                <div class="col">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-auto">
-                                <img 
-                                src="img/drizzle.png"
-                                alt="drizzle"
-                                width="100px"/>
-                            </div>
-                            <div class="col currentWeatherContainer">
-                                <div class="currentWeather">
-                                    <p>
-                                        <span id="temperature">10°C</span> 
-                                        <!-- <span>
-                                            <a href="" id="Cel">C</a>
-                                            |
-                                            <a href="" id="Fahr">F</a>
-                                        </span> -->
-                                    </p>
-                                    <p>Day 10° | Night -1°</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <ul class="conditionAtmosphere">
-                        <li id="weather-condition">Precipitation: 1%</li>
-                        <li id="degree">Humidity: 53%</li>
-                        <li id="wind">Wind: 18 km/h</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <body cz-shortcut-listen="true">
+    <div id="wrapper">
+      <div class="App">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-auto"><div class="forecast">
-                    <div aria-label="Sunday">Sun</div>
+          <div class="Weather-search">
+            <form id="search-form">
+              <div class="row justify-content-center">
+                <div class="col-auto">
+                  <input
+                    type="search"
+                    placeholder="Enter a city"
+                    class="form-control search-input"
+                    id="city-input"
+                    size="40"
+                    aria-autocomplete="list"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    autofocus="on"
+                  />
+                </div>
+                <div class="col-auto">
+                  <input
+                    type="submit"
+                    class="btn btn-primary"
+                    value="🔎"
+                    size="30"
+                  />
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary" type="button" id="location">
+                    📍
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="Weather-info">
+              <div class="row justify-content-between">
+                <div class="col-auto">
+                  <h1>
+                    <span id="city"></span>
+                    |
+                    <span id="date">Saturday, 14:32</span>
+                  </h1>
+                </div>
+                <div class="col-auto">
+                  <h2 id="description"></h2>
+                </div>
+              </div>
+              <div class="row justify-content-between">
+                <div class="col-auto">
+                  <div class="temperature-container d-flex justify-content-end">
+                    <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="Cloud" id="icon">
                     <div>
-                        <g-img>
-                            <img src="img/snow.png" alt="snow" width="60px" />
-                        </g-img>
+                      <span class="temperature" id="temperature"></span>
+                      <span>
+                        <button type="button" id="unit-Celc" class="active">C°</button> 
+                        | 
+                        <button type="button" id="unit-Fahr">F°</button>
+                      </span>
                     </div>
-                    <div>
-                        <div class="c-degree">3°</div>
-                        <div class="c-Degree">-2°</div>
-                    </div>
-                </div></div>
-                <div class="col-auto"><div class="forecast">
-                    <div aria-label="Monday">Mon</div>
-                    <div>
-                        <g-img>
-                            <img src="img/cloudy.png" alt="cloudy" width="60px" />
-                        </g-img>
-                    </div>
-                    <div>
-                        <div class="c-degree">8°</div>
-                        <div class="c-Degree">2°</div>
-                    </div>
-                </div></div>
-                <div class="col-auto"><div class="forecast">
-                    <div aria-label="Tuesday">Tue</div>
-                    <div>
-                        <g-img>
-                            <img src="img/clouds.png" alt="clouds" width="60px" />
-                        </g-img>
-                    </div>
-                    <div>
-                        <div class="c-degree">12°</div>
-                        <div class="c-Degree">2°</div>
-                    </div>
-                </div></div>
-                <div class="col-auto"><div class="forecast">
-                    <div aria-label="Wednesday">Wed</div>
-                    <div>
-                        <g-img>
-                            <img src="img/cloudy.png" alt="cloudy" width="60px" />
-                        </g-img>
-                    </div>
-                    <div>
-                        <div class="c-degree">11°</div>
-                        <div class="c-Degree">5°</div>
-                    </div>
-                </div></div>
-                <div class="col-auto"><div class="forecast">
-                    <div aria-label="Thursday">Thu</div>
-                    <div>
-                        <g-img>
-                            <img src="img/rain.png" alt="rain" width="60px" />
-                        </g-img>
-                    </div>
-                    <div>
-                        <div class="c-degree">7°</div>
-                        <div class="c-Degree">1°</div>
-                    </div>
-                </div></div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <ul>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
+                  </ul>
+                </div>
+              </div>
             </div>
+            <div class="WeatherForecast row">
+              <div class="col">
+                <div class="ForecastPreview">
+                  <div class="week-days">Sun</div>
+                  <canvas width="38" height="38"></canvas>
+                  <div class="forecast-temp">
+                    <span class="temp-day">3°</span>
+                    |
+                    <span class="temp-night">-2°</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="ForecastPreview">
+                  <div class="week-days">Mon</div>
+                  <canvas width="38" height="38"></canvas>
+                  <div class="forecast-temp">
+                    <span class="temp-day">8°</span>
+                    |
+                    <span class="temp-night">2°</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="ForecastPreview">
+                  <div class="week-days">Tue</div>
+                  <canvas width="38" height="38"></canvas>
+                  <div class="forecast-temp">
+                    <span class="temp-day">12°</span>
+                    |
+                    <span class="temp-night">2°</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="ForecastPreview">
+                  <div class="week-days">Wed</div>
+                  <canvas width="38" height="38"></canvas>
+                  <div class="forecast-temp">
+                    <span class="temp-day">11°</span>
+                    |
+                    <span class="temp-night">5°</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="ForecastPreview">
+                  <div class="week-days">Thu</div>
+                  <canvas width="38" height="38"></canvas>
+                  <div class="forecast-temp">
+                    <span class="temp-day">7°</span>
+                    |
+                    <span class="temp-night">1°</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <footer>This project was made by 
+                <strong>Mariia Sorokina</strong> 
+                and is open-sourced on 
+                <a href="https://github.com/parkmari29/Weather-project">GitHub</a>
+            </footer>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-    <div class="aboutOwner">This project was made by <strong>Mariia Sorokina</strong> and is open-sourced on <a href="https://github.com/parkmari29/Weather-project">GitHub</a></div>
   </body>
   <script src="script.js"></script>
 </html>
