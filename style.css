@@ -1,5 +1,5 @@
 body {
-  background: #f8f8ff;
+  background: #fff8f6;
 }
 .Weather-search {
   background: white;
@@ -16,7 +16,7 @@ body {
 }
 
 .Weather-search .search-input {
-  background: #f8f8ff;
+  background: #fff8f6;
   border: 1px solid #41326414;
   padding: 15px 20px;
   display: inline-block;
@@ -28,7 +28,7 @@ body {
 }
 
 .Weather-search .btn {
-  background: #f8f8ff;
+  background: #fff8f6;
   font-weight: bold;
   font-size: 16px;
   padding: 10px 15px;
@@ -87,7 +87,7 @@ body {
 .WeatherForecast {
   text-align: center;
   margin: 40px 0;
-  border-bottom: 1px solid #f8f8ff;
+  border-bottom: 1px solid #fff8f6;
   padding-bottom: 50px;
 }
 
