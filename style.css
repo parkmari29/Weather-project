@@ -78,7 +78,7 @@ body {
 .Weather-search li {
   font-weight: 500;
   margin-bottom: 5px;
-  color: #5252ff;
+  color: #EC6E4C;
   font-size: 20px;
   line-height: 20px;
   list-style: none;
@@ -97,14 +97,14 @@ body {
   text-align: center;
 }
 
-.WeatherForecast .forecast-temp {
+.WeatherForecast .weather-forecast-temperature {
   font-style: normal;
   font-size: 20px;
   line-height: 1.5;
 }
 
-.WeatherForecast .temp-night {
-  color: #5252ff;
+.WeatherForecast .weather-forecast-temp-min {
+  color: #EC6E4C;
   margin-left: 10px;
   opacity: 0.6;
 }
@@ -123,6 +123,6 @@ body {
 }
 
 .Weather-search .source {
-  color: #5252ff;
+  color: #EC6E4C;
   text-decoration: none;
 }
